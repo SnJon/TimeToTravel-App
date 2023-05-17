@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.TimeToTravel" parent="Base.Theme.TimeToTravel" />
+
+    <style name="Widget.AppTheme.LikeCheckBox" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="iconTint">@color/like_checkbox_tint</item>
+        <item name="android:minWidth">@dimen/icon_button_min_size</item>
+        <item name="android:minHeight">@dimen/icon_button_min_size</item>
+    </style>
 </resources>

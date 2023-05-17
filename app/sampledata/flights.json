@@ -1,0 +1,29 @@
+{
+  "flights": [
+    {
+      "startDate": "17 мая",
+      "endDate": "20 декабря",
+      "startLocationCode": "LED",
+      "endLocationCode": "MOW",
+      "startCity": "Санкт-Петербург",
+      "endCity": "Москва",
+      "serviceClass": "ECONOMY",
+      "seats": [
+        {
+          "passengerType": "ADT",
+          "count": 1
+        },
+        {
+          "passengerType": "CHD",
+          "count": 0
+        },
+        {
+          "passengerType": "INF",
+          "count": 0
+        }
+      ],
+      "price": 2719,
+      "searchToken": "LED180523MOWY100"
+    }
+  ]
+}
