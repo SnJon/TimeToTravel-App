@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Пора в путешествие</string>
-    <string name="there_text_tools">Туда</string>
-    <string name="price_text">"Цена: "</string>
+    <string name="there_text">Туда %1$s</string>
+    <string name="back_text">Обратно %1$s</string>
+    <string name="price_text">Цена: %1$s</string>
 </resources>
