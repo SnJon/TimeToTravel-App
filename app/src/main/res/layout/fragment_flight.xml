@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/flight_card" />
+    <include
+        android:id="@+id/fragment_card"
+        layout="@layout/card_flight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
