@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Пора в путешествие</string>
+    <string name="there_text_tools">Туда</string>
+    <string name="price_text">"Цена: "</string>
+</resources>
