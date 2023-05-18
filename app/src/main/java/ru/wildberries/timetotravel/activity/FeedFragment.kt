@@ -65,7 +65,6 @@ class FeedFragment : Fragment() {
             binding.progress.isVisible = state.loading
             binding.errorGroup.isVisible = state.error
             binding.emptyText.isVisible = state.empty
-            binding.refresh.isRefreshing = state.loading
         }
 
         binding.retryButton.setOnClickListener {
@@ -74,6 +73,7 @@ class FeedFragment : Fragment() {
 
         binding.refresh.setOnRefreshListener {
             viewModel.loadFlights()
+            binding.refresh.isRefreshing = false
         }
     }
 
