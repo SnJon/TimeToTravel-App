@@ -1,7 +1,8 @@
-package ru.wildberries.timetotravel
+package ru.wildberries.timetotravel.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.wildberries.timetotravel.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
