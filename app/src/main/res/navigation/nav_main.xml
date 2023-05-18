@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="ru.wildberries.timetotravel.FeedFragment"
+        android:name="ru.wildberries.timetotravel.activity.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/flightFragment"
-        android:name="ru.wildberries.timetotravel.FlightFragment"
+        android:name="ru.wildberries.timetotravel.activity.FlightFragment"
         android:label="FlightFragment"
         tools:layout="@layout/fragment_flight"/>
 </navigation>

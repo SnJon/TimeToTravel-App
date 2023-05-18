@@ -1,9 +1,14 @@
 package ru.wildberries.timetotravel.repository
 
-import androidx.lifecycle.LiveData
-import ru.wildberries.timetotravel.dto.Flight
+import ru.wildberries.timetotravel.dto.FlightsResponse
 
 interface FlightRepository {
-    fun getAll() : LiveData<List<Flight>>
+    fun getAll(callback: Callback<FlightsResponse>)
     fun likeByToken(token: String)
+
+    fun isFlightLiked(token: String): Boolean
+    interface Callback<T> {
+        fun onSuccess(data: T) {}
+        fun onError(e: Exception) {}
+    }
 }

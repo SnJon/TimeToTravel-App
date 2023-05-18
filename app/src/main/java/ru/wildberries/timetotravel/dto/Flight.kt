@@ -1,13 +1,14 @@
 package ru.wildberries.timetotravel.dto
-
 data class Flight(
-    val token: String,
     val startDate: String,
     val endDate: String,
     val startLocationCode: String,
-    val endLocationCode:  String,
+    val endLocationCode: String,
     val startCity: String,
     val endCity: String,
+    val serviceClass: String,
+    val seats: List<Seat>,
     val price: Int,
+    val searchToken: String,
     val likeByMe: Boolean
 )

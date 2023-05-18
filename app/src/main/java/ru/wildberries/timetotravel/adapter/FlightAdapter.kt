@@ -61,7 +61,7 @@ class FlightViewHolder(
 
 class FlightDiffCallBack : DiffUtil.ItemCallback<Flight>() {
     override fun areItemsTheSame(oldItem: Flight, newItem: Flight): Boolean {
-        return oldItem.token == newItem.token
+        return oldItem.searchToken == newItem.searchToken
     }
 
     override fun areContentsTheSame(oldItem: Flight, newItem: Flight): Boolean {
