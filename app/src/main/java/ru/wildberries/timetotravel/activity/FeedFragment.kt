@@ -1,13 +1,15 @@
-package ru.wildberries.timetotravel
+package ru.wildberries.timetotravel.activity
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import ru.wildberries.timetotravel.FlightFragment.Companion.tokenArg
+import ru.wildberries.timetotravel.activity.FlightFragment.Companion.tokenArg
+import ru.wildberries.timetotravel.R
 import ru.wildberries.timetotravel.adapter.FlightAdapter
 import ru.wildberries.timetotravel.adapter.OnInteractionListener
 import ru.wildberries.timetotravel.databinding.FragmentFeedBinding
@@ -58,8 +60,20 @@ class FeedFragment : Fragment() {
     private fun subscribe(binding: FragmentFeedBinding) {
         val adapter = FlightAdapter(interaction)
         binding.list.adapter = adapter
-        viewModel.data.observe(viewLifecycleOwner) { flights ->
-            adapter.submitList(flights)
+        viewModel.data.observe(viewLifecycleOwner) { state ->
+            adapter.submitList(state.flights)
+            binding.progress.isVisible = state.loading
+            binding.errorGroup.isVisible = state.error
+            binding.emptyText.isVisible = state.empty
+            binding.refresh.isRefreshing = state.loading
+        }
+
+        binding.retryButton.setOnClickListener {
+            viewModel.loadFlights()
+        }
+
+        binding.refresh.setOnRefreshListener {
+            viewModel.loadFlights()
         }
     }
 
