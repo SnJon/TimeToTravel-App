@@ -1,13 +1,16 @@
 package ru.wildberries.timetotravel.adapter
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.wildberries.timetotravel.R
 import ru.wildberries.timetotravel.databinding.CardFlightBinding
 import ru.wildberries.timetotravel.dto.Flight
+import ru.wildberries.timetotravel.util.dateTimeFormat
 
 class FlightAdapter(private val onInteractionListener: OnInteractionListener) :
     ListAdapter<Flight, FlightViewHolder>(FlightDiffCallBack()) {
@@ -16,6 +19,7 @@ class FlightAdapter(private val onInteractionListener: OnInteractionListener) :
         return FlightViewHolder(binding, onInteractionListener)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: FlightViewHolder, position: Int) {
         val flight = getItem(position)
         holder.bind(flight)
@@ -31,15 +35,16 @@ class FlightViewHolder(
     private val binding: CardFlightBinding,
     private val onInteractionListener: OnInteractionListener
 ) : RecyclerView.ViewHolder(binding.root) {
+    @RequiresApi(Build.VERSION_CODES.O)
     fun bind(flight: Flight) {
         with(binding) {
             headerCity.text = flight.endCity
-            startDate.text = root.context.getString(R.string.there_text, flight.startDate)
+            startDate.text = root.context.getString(R.string.there_text, flight.startDate.dateTimeFormat())
             thereStartCity.text = flight.startCity
             thereStartLocationCode.text = flight.startLocationCode
             thereEndCity.text = flight.endCity
             thereEndLocationCode.text = flight.endLocationCode
-            endDate.text = root.context.getString(R.string.back_text, flight.endDate)
+            endDate.text = root.context.getString(R.string.back_text, flight.endDate.dateTimeFormat())
             backStartCity.text = flight.endCity
             backStartLocationCode.text = flight.endLocationCode
             backEndCity.text = flight.startCity
