@@ -16,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/avatar"
@@ -32,7 +32,7 @@
             android:id="@+id/headerCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/common_spacing"
+            android:layout_marginEnd="40dp"
             android:layout_marginBottom="@dimen/common_spacing"
             android:textAlignment="center"
             android:textSize="25sp"
@@ -41,6 +41,12 @@
             app:layout_constraintStart_toEndOf="@id/avatar"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@sample/flights.json/flights/endCity" />
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/header"
+            android:layout_height="1dp"/>
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/header"
