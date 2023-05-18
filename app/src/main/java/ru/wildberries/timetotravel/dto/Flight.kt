@@ -10,5 +10,5 @@ data class Flight(
     val seats: List<Seat>,
     val price: Int,
     val searchToken: String,
-    val likeByMe: Boolean
+    var likeByMe: Boolean
 )
