@@ -27,13 +27,13 @@ class FeedFragment : Fragment() {
     private val interaction = object : OnInteractionListener {
 
         override fun onLike(flight: Flight) {
-            viewModel.likeByToken(flight.token)
+            viewModel.likeByToken(flight.searchToken)
         }
 
         override fun onOpen(flight: Flight) {
             findNavController().navigate(
                 R.id.action_feedFragment_to_flightFragment,
-                Bundle().apply { tokenArg = flight.token })
+                Bundle().apply { tokenArg = flight.searchToken })
         }
     }
 

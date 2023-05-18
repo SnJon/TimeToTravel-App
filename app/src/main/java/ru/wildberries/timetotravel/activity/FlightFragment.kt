@@ -1,4 +1,4 @@
-package ru.wildberries.timetotravel
+package ru.wildberries.timetotravel.activity
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import ru.wildberries.timetotravel.R
 import ru.wildberries.timetotravel.databinding.FragmentFlightBinding
 import ru.wildberries.timetotravel.util.TokenArg
 import ru.wildberries.timetotravel.viewmodel.FlightViewModel
@@ -40,8 +41,8 @@ class FlightFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val flightToken = arguments?.tokenArg ?: ""
-        viewModel.data.observe(viewLifecycleOwner) { flights ->
-            val flight = flights.find { it.token == flightToken } ?: return@observe
+        viewModel.data.observe(viewLifecycleOwner) { state ->
+            val flight = state.flights.find { it.searchToken == flightToken } ?: return@observe
 
             with(binding) {
                 fragmentCard.headerCity.text = flight.endCity
