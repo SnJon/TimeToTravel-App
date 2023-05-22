@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import ru.wildberries.timetotravel.R
 import ru.wildberries.timetotravel.databinding.FragmentFlightBinding
 import ru.wildberries.timetotravel.util.TokenArg
@@ -68,6 +69,10 @@ class FlightFragment : Fragment() {
 
                 fragmentCard.like.setOnClickListener {
                     viewModel.likeByToken(flightToken)
+                }
+
+                binding.back.setOnClickListener {
+                    findNavController().navigateUp()
                 }
             }
         }
